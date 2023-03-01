@@ -1,8 +1,26 @@
-﻿@{
+﻿@using MvcCoreSession.Helpers
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+@{
+    string jsonPersona = @Context.Session.GetString("PERSONA");
+    Persona persona = null;
+    if(jsonPersona != null)
+    {
+        persona = HelperJsonSession.DeserializeObject<Persona>(jsonPersona);
+    }
+}
+
+        <div class="text-center">
+            <h1 class="display-4">Proyecto Session</h1>
+            <p>Hora: @Context.Session.GetString("hora")</p>
+            <p>Usuario: @Context.Session.GetString("nombre")</p>
+            @if(persona != null)
+            {
+                <h2>Persona: </h2>
+                <h3 style="color: blue"><span style="color: black">Nombre: </span> @persona.Nombre </h3>
+                <h3 style="color: red"><span style="color: black">Email: </span> @persona.Email </h3>
+                <h3 style="color: green"><span style="color: black">Edad: </span> @persona.Edad</h3>
+            } 
+        </div>

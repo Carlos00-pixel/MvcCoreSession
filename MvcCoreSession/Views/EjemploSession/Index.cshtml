@@ -2,9 +2,36 @@
 
 <h1 style="color:blue">@ViewData["NUMERO"]</h1>
 
-<a asp-controller="EjemploSession"
-    asp-action="SessionSimple"
-    class="btn btn-info">
-    Session Simple
-</a>
+<ul class="list-group">
+    <li class="list-group-item">
+        <a asp-controller="EjemploSession"
+            asp-action="SessionSimple"
+            class="btn btn-info">
+            Session Simple
+        </a>
+    </li>
+    <li class="list-group-item">
+        <a asp-controller="EjemploSession"
+            asp-action="SessionPersona"
+            class="btn btn-info">
+            Session Persona
+        </a>
+    </li>
+    <li class="list-group-item">
+        <a asp-controller="EjemploSession"
+            asp-action="ColeccionSessionPersonas"
+            class="btn btn-info">
+            Coleccion Session Personas
+        </a>
+    </li>
+    <li class="list-group-item">
+        <a asp-controller="EjemploSession"
+            asp-action="SessionPersonaJson"
+            class="btn btn-info">
+            Session Persona Json
+        </a>
+    </li>
+</ul>
+
+
 
