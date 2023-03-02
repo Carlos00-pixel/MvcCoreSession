@@ -4,12 +4,11 @@
 }
 
 @{
-    string jsonPersona = @Context.Session.GetString("PERSONA");
-    Persona persona = null;
-    if(jsonPersona != null)
-    {
-        persona = HelperJsonSession.DeserializeObject<Persona>(jsonPersona);
-    }
+    Persona persona = Context.Session.GetObject<Persona>("PERSONAOBJECT");
+    //if(jsonPersona != null)
+    //{
+    //    persona = HelperJsonSession.DeserializeObject<Persona>(jsonPersona);
+    //}
 }
 
         <div class="text-center">
